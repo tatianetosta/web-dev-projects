@@ -1,0 +1,50 @@
+<form name="myForm" ng-controller="FormCtrl">
+    <table>
+        <tr>
+            <td class="info">
+                Contact Email:
+            </td>
+            <td>
+                <input type="email" id="email" name="input" size="35" ng-model="input.text" required>
+            </td>
+            <td>
+                <span ng-show="submitted && myForm.input.$invalid" class="error">* A valid email is required.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="info">
+                Subject:
+            </td>
+            <td>
+                <input type="text" name="subject" size="35" ng-model="subject.text" required>
+            </td>
+            <td>
+                <span ng-show="submitted && myForm.subject.$invalid" class="error">* A subject is required.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="info">
+                Message Body:
+            </td>
+            <td>
+                <textarea name="message" rows="10" cols="29" ng-model="message.text" ng-minlength="4" ng-maxlength="255" required>
+                </textarea>
+            </td>
+            <td>
+                <span ng-show="submitted && myForm.message.$invalid" class="error">* A message greater than 3 characters and less than 256 characters is required.</span>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="button" name="btnSend" class="btn" ng-click="sendEmail(myForm.$valid, input.text)">Send Email</button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">
+                <h3 ng-show="showSuccessMsg" class="success"> {{sucessMessage}} </h3>
+            </td>
+        </tr>
+    </table>
+</form>

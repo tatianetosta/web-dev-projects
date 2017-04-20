@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>Homework 2</title>
+    <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/service.js"></script> 
+    <style>
+        body {
+            font-family: Verdana;
+            font-size: 12px;
+        }
+        table td {
+            padding: 7px;
+            width: 240px;
+        }
+        input, textarea {
+            border: 1px solid black;
+        }
+        .info {
+            text-align: right;
+            font-weight: bold;
+            vertical-align: text-top;
+        }
+        .btn {
+            background-color: lightgrey;
+            border: 1px solid black;
+            color: black;
+            width: 100%;
+        }
+        .error {
+            vertical-align: text-top;
+            color: red;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        #email {
+            text-decoration: underline;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body ng-app='HomeworkApp'>
+
+    <div ng-controller="AppCtrl" ng-model="title">
+        <h1>{{title}}</h1>
+
+        <a href="#home">Home</a>
+        <a href="#home/about">About</a>
+        <hr>
+        
+        <div ng-view></div>
+    </div>
+</body>
+</html>
